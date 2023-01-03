@@ -1,0 +1,7 @@
+.Tablo, th, td {
+    border: 1px solid;
+    
+  }
+.Tablo{
+    width: 600px;
+}
