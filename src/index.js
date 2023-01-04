@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import App from './App';
 import AppInscription from './AppRedux/AppInscription';
+// import AppRedux from './AppRedux/AppRedux';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AppInscription />
+    {/* <AppRedux /> */}
   </React.StrictMode>
 );
 

@@ -1,21 +1,23 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import {
-	REMOVE_INSCRIPTION_ACTION,
-	EDIT_INSCRIPTION_ACTION,
-} from '../Actions/action_inscription';
+import { REMOVE_INSCRIPTION_ACTION } from '../Actions/action_inscription';
 import { useDispatch } from 'react-redux';
-
+// import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 function Crud_Stagaires() {
 	const dispatch = useDispatch();
+	// const navigate = useNavigate();
 	function remove_Inscription(id) {
 		dispatch(REMOVE_INSCRIPTION_ACTION(id));
 	}
-	function edit_Inscription(id) {
-		dispatch(EDIT_INSCRIPTION_ACTION(id));
-	}
+
+	// function ClickEdit(id) {
+	// 	navigate.push('/modifier', { state: { id: id } });
+	// alert('Hello Edit !!');
+	// }
+
 	const list = useSelector((state) => state);
+	var index = list.length;
 	return (
 		<div>
 			<h1>CRUD Stagiaires </h1>
@@ -34,7 +36,7 @@ function Crud_Stagaires() {
 						</tr>
 					) : (
 						list.map((elm) => (
-							<tr key={elm.id}>
+							<tr key={index++}>
 								<td>{elm.id}</td>
 								<td>{elm.nom}</td>
 								<td>{elm.filiere}</td>
@@ -42,17 +44,34 @@ function Crud_Stagaires() {
 									<button onClick={() => remove_Inscription(elm.id)}>
 										Supprimer
 									</button>
-									<button onClick={() => edit_Inscription(elm.id)}>
-										Edit 
-									</button>
+
+									<Link
+										//  to={`/modifier`}
+										to={`/modifier/${elm.id}`}
+										// state={{ idP: elm.id }}
+									>
+										<button
+										// onClick={() => ClickEdit(elm.id)}
+										>
+											Edit Stagiaire
+										</button>
+									</Link>
 								</td>
 							</tr>
 						))
 					)}
 				</tbody>
 			</table>
+			<div>{`Nombre d'inscrit : ${list.length}`}</div>
 
 			<Link to="/ ">Add inscription</Link>
+			<br />
+			<br />
+			<Link to="/AfficherFiliere">
+				<button>
+						Afficher par Filiere
+				</button>
+			</Link>
 		</div>
 	);
 }

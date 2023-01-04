@@ -15,9 +15,9 @@ export function REMOVE_INSCRIPTION_ACTION(id) {
 	};
 }
 
-export function EDIT_INSCRIPTION_ACTION(id) {
+export function EDIT_INSCRIPTION_ACTION(id,inscription) {
 	return {
 		type: EDIT_INSCRIPTION,
-		payload: id,
+		payload: {id:id,inscription:inscription},
 	};
 }

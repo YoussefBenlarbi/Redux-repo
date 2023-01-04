@@ -3,25 +3,31 @@ import { Link } from 'react-router-dom';
 import { ADD_INSCRIPTION_ACTION } from '../Actions/action_inscription';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Add_Inscription() {
-	const [id, setId] = useState('');
+	const Inscriptions = useSelector((state) => state);
+	const navigate =useNavigate();
+	const [id, setId] = useState(Inscriptions.length + 1);
 	const [nom, setNom] = useState('');
 	const [filiere, setFiliere] = useState('');
 	const dispatch = useDispatch();
 	function Add_Inscription(payl) {
 		dispatch(ADD_INSCRIPTION_ACTION(payl));
+		navigate('/CRUD');
 	}
 	const inscription = { id: id, nom: nom, filiere: filiere };
 	return (
 		<div>
+			<h1>Ajouter Stagiaire :</h1>
 			<table>
 				<tbody>
 					<tr>
 						<td>id :</td>
 						<td>
 							{' '}
-							<input type="text" onChange={(e) => setId(e.target.value)} />
+							<input type="text" value={id} onChange={(e) => setId(e.target.value)} />
 							
 						</td>
 					</tr>

@@ -1,7 +1,10 @@
 .Tablo, th, td {
     border: 1px solid;
-    
+    text-align: center;
   }
 .Tablo{
     width: 600px;
+}
+input{
+  text-align: center;
 }
