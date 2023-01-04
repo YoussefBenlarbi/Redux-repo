@@ -4,7 +4,7 @@ import { store } from '../Store/store';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Crud_Stagaires from './../Components/Crud_Stagaires';
 import Edit_Inscription from './../Components/Edit_Inscription';
-import AfficherFiliere from './../Components/AfficherFiliere';
+import AfficherFiliere from './../Components/AfficherFiliere2';
 import './../Style/StyleApp.css';
 
 
