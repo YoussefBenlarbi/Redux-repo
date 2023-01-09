@@ -1,22 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function AfficherFiliere() {
 	const [filiere, setFiliere] = useState('');
-	const [msg, setMsg] = useState('');
 	const list = useSelector((state) => state);
 	const listFiliere = list.filter((elm) => elm.filiere == filiere);
-	function SearchFiliere() {
-		filiere.trim() === ''
-			? setMsg('Veuiller Saisir Fillier ')
-			: listFiliere.length === 0
-			? setMsg('Array is Empty')
-			: setMsg('');
-	}
+	
 	return (
 		<div>
+			<h2>Chercher Stagiaires par nom de filliere :</h2>
 			<div>
 				Saisir le nom de Filiere :{' '}
 				<input
@@ -25,10 +19,17 @@ function AfficherFiliere() {
 					onChange={(e) => setFiliere(e.target.value)}
 				/>
 			</div>
+			<br />
 			{listFiliere.length === 0 ? (
-				<p>{msg}</p>
+				filiere.trim() === '' ? (
+					<p>Veuiller Saisir Filliere </p>
+				) : listFiliere.length === 0 ? (
+					<p>Nom de filliere Incorrect !</p>
+				) : (
+					''
+				)
 			) : (
-				<table className='Tablo'>
+				<table className="Tablo">
 					<tr>
 						<th>Id :</th>
 						<th>Nom :</th>
@@ -44,7 +45,6 @@ function AfficherFiliere() {
 				</table>
 			)}
 			<br />
-			<button onClick={() => SearchFiliere()}>Search</button>
 		</div>
 	);
 }

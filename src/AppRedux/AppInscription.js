@@ -1,9 +1,9 @@
 import { Provider } from 'react-redux';
-import Add_Inscription from '../Components/Add_Inscription';
+import AddInscription from '../Components/AddInscription';
 import { store } from '../Store/store';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Crud_Stagaires from './../Components/Crud_Stagaires';
-import Edit_Inscription from './../Components/Edit_Inscription';
+import CrudStagaires from './../Components/CrudStagaires';
+import EditInscription from './../Components/EditInscription';
 import AfficherFiliere from './../Components/AfficherFiliere2';
 import './../Style/StyleApp.css';
 
@@ -13,11 +13,11 @@ function AppInscription() {
 		<Provider store={store}>
 			<Router>
 				<Routes>
-					<Route path="/" element={<Add_Inscription />} />
-					<Route path="/CRUD" element={<Crud_Stagaires />} />
-					<Route path="/modifier/:idP" element={<Edit_Inscription />} />
+					<Route path="/" element={<AddInscription />} />
+					<Route path="/CRUD" element={<CrudStagaires />} />
+					<Route path="/modifier/:idP" element={<EditInscription />} />
 					<Route path="/AfficherFiliere" element={<AfficherFiliere />} />
-					{/* <Route path="/modifier" element={<Edit_Inscription />} /> */}
+					{/* <Route path="/modifier" element={<EditInscription />} /> */}
 				</Routes>
 
 				

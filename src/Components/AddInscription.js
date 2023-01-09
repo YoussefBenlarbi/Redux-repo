@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-function Add_Inscription() {
+function AddInscription() {
 	const Inscriptions = useSelector((state) => state);
 	const navigate =useNavigate();
 	const [id, setId] = useState(Inscriptions.length + 1);
@@ -27,7 +27,7 @@ function Add_Inscription() {
 						<td>id :</td>
 						<td>
 							{' '}
-							<input type="text" value={id} onChange={(e) => setId(e.target.value)} />
+							<input type="text" disabled={true} value={id} onChange={(e) => setId(e.target.value)} />
 							
 						</td>
 					</tr>
@@ -61,8 +61,8 @@ function Add_Inscription() {
 					</tr>
 				</tbody>
 			</table>
-		</div>
+		</div>	
 	);
 }
 
-export default Add_Inscription;
+export default AddInscription;

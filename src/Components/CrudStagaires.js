@@ -4,7 +4,7 @@ import { REMOVE_INSCRIPTION_ACTION } from '../Actions/action_inscription';
 import { useDispatch } from 'react-redux';
 // import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-function Crud_Stagaires() {
+function CrudStagaires() {
 	const dispatch = useDispatch();
 	// const navigate = useNavigate();
 	function remove_Inscription(id) {
@@ -21,6 +21,8 @@ function Crud_Stagaires() {
 	return (
 		<div>
 			<h1>CRUD Stagiaires </h1>
+			<div>{`Nombre d'inscrit : ${list.length}`}</div>
+			<br />
 			<table className="Tablo">
 				<tbody>
 					<tr>
@@ -62,18 +64,16 @@ function Crud_Stagaires() {
 					)}
 				</tbody>
 			</table>
-			<div>{`Nombre d'inscrit : ${list.length}`}</div>
+			<br />
 
 			<Link to="/ ">Add inscription</Link>
 			<br />
 			<br />
 			<Link to="/AfficherFiliere">
-				<button>
-						Afficher par Filiere
-				</button>
+				<button>Afficher par Filiere</button>
 			</Link>
 		</div>
 	);
 }
 
-export default Crud_Stagaires;
+export default CrudStagaires;

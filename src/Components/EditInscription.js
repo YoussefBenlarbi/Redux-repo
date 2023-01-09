@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate} from 'react-router-dom';
 
-function Edit_Inscription() {
+function EditInscription() {
 	const navigate =useNavigate();
 	// const location = useLocation();
 	// const idP = location.state.idP;
@@ -83,4 +83,4 @@ function Edit_Inscription() {
 	);
 }
 
-export default Edit_Inscription;
+export default EditInscription;

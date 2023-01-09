@@ -5,7 +5,13 @@ import {
 } from './../Actions/action_inscription';
 const initialState = [
 	{ id: 1, nom: 'Hidar', filiere: 'FUS' },
-	{ id: 2, nom: 'Idrissi', filiere: 'FUS' },
+	{ id: 2, nom: 'Idrissi', filiere: 'RESEAU' },
+	{ id: 3, nom: 'Mohamed', filiere: 'WFS' },
+	{ id: 4, nom: 'Ahmed', filiere: 'CYBER SECURITE' },
+	{ id: 5, nom: 'Salah', filiere: 'FUS' },
+	{ id: 6, nom: 'Karim', filiere: 'RESEAU' },
+	{ id: 7, nom: 'Fatima', filiere: 'CYBER SECURITE' },
+	{ id: 8, nom: 'Sami', filiere: 'WFS' },
 ];
 export const inscriptionReducer = (state = initialState, action) => {
 	switch (action.type) {
